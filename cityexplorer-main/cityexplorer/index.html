@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>City Explorer</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#destinatii">Destinații</a></li>
+                <li><a href="#planifica">Planifică</a></li>
+                <li><a href="#recomandari">Recomandări</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="destinatii">
+            <h2>Destinații</h2>
+            <div class="destinations-grid">
+                <article class="card featured">
+                    <h3>Lisabona</h3>
+                    <p class="country">Portugalia</p>
+                    <p>Orașul celor șapte coline, renumit pentru tramvaiele galbene istorice, cartierul Alfama și muzica Fado.</p>
+                    <p class="duration"><strong>Durată recomandată:</strong> 4 zile</p>
+                </article>
+
+                <article class="card">
+                    <h3>Praga</h3>
+                    <p class="country">Cehia</p>
+                    <p>Centru istoric gotic și baroc, Podul Carol, Ceasul Astronomic și cel mai mare complex de castele medievale.</p>
+                    <p class="duration"><strong>Durată recomandată:</strong> 3 zile</p>
+                </article>
+
+                <article class="card">
+                    <h3>Roma</h3>
+                    <p class="country">Italia</p>
+                    <p>Un muzeu în aer liber care îmbină ruinele antice precum Colosseumul și Forumul Roman cu gastronomia autentică.</p>
+                    <p class="duration"><strong>Durată recomandată:</strong> 5 zile</p>
+                </article>
+
+                <article class="card">
+                    <h3>Viena</h3>
+                    <p class="country">Austria</p>
+                    <p>Capitala muzicii clasice, cunoscută pentru palatele imperiale Schönbrunn și Belvedere și cafenelele tradiționale.</p>
+                    <p class="duration"><strong>Durată recomandată:</strong> 3 zile</p>
+                </article>
+
+                <article class="card">
+                    <h3>Barcelona</h3>
+                    <p class="country">Spania</p>
+                    <p>Arhitectura unică a lui Antoni Gaudí, bulevardul La Rambla și plajele mediteraneene chiar lângă centrul urban.</p>
+                    <p class="duration"><strong>Durată recomandată:</strong> 4 zile</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="planifica">
+            <h2>Planifică</h2>
+            <form class="trip-form" action="#" method="get">
+                <div class="form-group">
+                    <label for="nume">Nume</label>
+                    <input type="text" id="nume" name="nume" placeholder="Introdu numele tău" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="destinatie">Destinație</label>
+                    <select id="destinatie" name="destinatie" required>
+                        <option value="">Alege...</option>
+                        <option value="lisabona">Lisabona</option>
+                        <option value="praga">Praga</option>
+                        <option value="roma">Roma</option>
+                        <option value="viena">Viena</option>
+                        <option value="barcelona">Barcelona</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="zile">Număr de zile</label>
+                    <input type="number" id="zile" name="zile" min="1" max="30" value="3" required>
+                </div>
+
+                <button type="submit">Planifică excursia</button>
+            </form>
+        </section>
+
+        <section id="recomandari">
+            <h2>Recomandări</h2>
+            <ul class="recommendations-list">
+                <li>Rezervă biletele online în avans pentru obiectivele foarte aglomerate (Colosseum, Sagrada Família) pentru a evita cozile.</li>
+                <li>Folosește abonamentele de transport public pe mai multe zile — sunt mult mai economice decât biletele individuale.</li>
+                <li>Explorează cartierele istorice dimineața devreme, înainte de ora 09:00, pentru fotografii fără aglomerație.</li>
+                <li>Verifică zilele cu intrare gratuită la muzeele naționale (de obicei prima duminică din lună în multe capitale europene).</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Pisau Andrei — City Explorer</p>
+    </footer>
+
+</body>
+</html>
