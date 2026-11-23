@@ -15,18 +15,13 @@ export default function App() {
   const [eroare, setEroare] = useState(null);
   const [seTrimite, setSeTrimite] = useState(false);
   const [textCautare, setTextCautare] = useState('');
-  
-  // Stările pentru paginare
-  const [pagina, setPagina] = useState(1);
-  const [totalPagini, setTotalPagini] = useState(1);
 
   useEffect(() => {
     async function incarca() {
       setIncarcare(true);
       try {
-        const obiectRaspuns = await getDestinatii(pagina);
-        setDestinatii(obiectRaspuns.data);
-        setTotalPagini(obiectRaspuns.pages);
+        const lista = await getDestinatii();
+        setDestinatii(lista);
       } catch (err) {
         setEroare(err.message);
       } finally {
@@ -34,7 +29,7 @@ export default function App() {
       }
     }
     incarca();
-  }, [pagina]);
+  }, []);
 
   const total = destinatii.length;
   const nevizitate = getNevizitate(destinatii).length;
@@ -97,29 +92,11 @@ export default function App() {
       )}
 
       {!incarcare && !eroare && destinatii.length > 0 && afisate.length > 0 && (
-        <>
-          <ListaDestinatii 
-             destinatii={afisate} 
-             onToggle={handleToggle} 
-             onDelete={handleDelete}
-          />
-          
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
-            <button 
-              disabled={pagina === 1} 
-              onClick={() => setPagina((p) => p - 1)}
-            >
-              Înapoi
-            </button>
-            <span>pagina {pagina} din {totalPagini}</span>
-            <button 
-              disabled={pagina === totalPagini} 
-              onClick={() => setPagina((p) => p + 1)}
-            >
-              Înainte
-            </button>
-          </div>
-        </>
+        <ListaDestinatii 
+           destinatii={afisate} 
+           onToggle={handleToggle} 
+           onDelete={handleDelete}
+        />
       )}
     </main>
   );

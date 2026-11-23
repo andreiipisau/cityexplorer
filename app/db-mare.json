@@ -13999,6 +13999,14 @@
       "tara": "Portugalia",
       "zile": 13,
       "vizitat": false
+    },
+    {
+      "oras": "Bangladesh",
+      "tara": "India",
+      "zile": 7,
+      "vizitat": false,
+      "id": "aYpr9WnrLQE"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

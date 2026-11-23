@@ -1,18 +1,18 @@
-const API_URL = 'http://localhost:3002'; // Atenție, am schimbat portul pe 3002!
+const API_URL = 'http://localhost:3000/api';
 
-export async function getDestinatii(pagina = 1) {
-  const response = await fetch(`${API_URL}/destinatii?_page=${pagina}&_per_page=20`);
+export async function getDestinatii() {
+  const response = await fetch(`${API_URL}/destinatii`);
   if (!response.ok) {
     throw new Error(`Serverul a răspuns cu ${response.status}`);
   }
-  return response.json(); // Acum va întoarce un obiect ce include "data" și "pages"
+  return response.json();
 }
 
 export async function postDestinatie(destinatie) {
   const response = await fetch(`${API_URL}/destinatii`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(destinatie)
+    body: JSON.stringify(destinatie),
   });
   if (!response.ok) {
     throw new Error(`Serverul a răspuns cu ${response.status}`);
@@ -24,7 +24,7 @@ export async function patchVizitat(id, vizitat) {
   const response = await fetch(`${API_URL}/destinatii/${id}`, {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ vizitat })
+    body: JSON.stringify({ vizitat }),
   });
   if (!response.ok) {
     throw new Error(`Serverul a răspuns cu ${response.status}`);
